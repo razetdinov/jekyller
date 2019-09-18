@@ -3,8 +3,6 @@
 layout: yandex2
 
 style: |
-    /* собственные стили можно писать здесь!! */
-
 
 ---
 
@@ -31,255 +29,372 @@ style: |
 
 </div>
 
-## Название раздела
+## Я работаю в Яндексе 12 лет
+{:.fullscreen}
+
+![](pictures/bill.jpg)
+
+## Зачем нужен монорепозиторий
 {:.section}
 
-### Верхний колонтитул
+## Монорепозиторий: плюсы
+* Легкое реиспользование кода
+* Легкое управление зависимостями
+* Поддержка только актуальной версии
+* Атомарные коммиты
+* Масштабные рефакторинги
+* Унификация всего
 
-## Длинная цитата переносится на несколько строк
-{:.blockquote}
+## Монорепозиторий: минусы
+* Больше дискового пространства
+* Дольше установка зависимостей
+* Очередь на вливание
+* Размытие ответственности
 
-### Источник
+## Кто использует монорепозитории
+* React
+* Babel
+* Jest
+* Ember
+* Meteor
+* Angular
 
-## Заголовок
+## Создание монорепозитория
+{:.section}
 
-Основной текст
+## npx lerna init
+```
+packages/
+package.json
+lerna.json
+```
 
-**Ключевая мысль**
+**lerna.json**
+```
+{
+  "version": "1.0.0"
+  "packages": [
+    "packages/*"
+  ]
+}
+```
 
-- Маркированный список
-- Маркированный список
+## Импорт проектов в монорепозиторий
+{:.section}
 
-1. Нумерованный список
-2. Нумерованный список
+## Импорт проектов в монорепозиторий
+<table><tr><td>
+Было:
+<pre><code>
+ 
+A/
+  package.json
+B/
+  package.json
+</code></pre>
+</td><td>
+Стало:
+<pre><code>
+packages/
+  A/
+    package.json
+  B/
+    package.json
+</code></pre>
+</td></tr></table>
 
-### Источник
+## lerna import
+* `lerna import <path-to-repository>`
+* Собирает все коммиты
+* Заменяет в них пути к файлам
+* Добавляет их в монорепозиторий
 
-## Заголовок
+## git subtree
+* `git subtree add -P <prefix> <repository> <ref>`
+* `git subtree pull -P <prefix> <repository> <ref>`
+* `git subtree push -P <prefix> <repository> <ref>`
+* Добавляет содержимое внешнего репозитория в монорепозиторий
+* Позволяет обмениваться изменениями между ними
 
-Элементы появляются по очереди
-
-1. {:.next}Нумерованный список
-2. {:.next}Нумерованный список
-3. {:.next}Нумерованный список
-4. {:.next}Нумерованный список
-
-
-### Источник
-
-## Заголовок
-{:.images}
-
-![](themes/yandex2/images/images-one.svg)
-
-### Источник
-
-## Заголовок
-{:.images .two}
-
-![](themes/yandex2/images/images-two.svg)
-*Текст*
-
-![](themes/yandex2/images/images-two.svg)
-*Текст*
-
-### Источник
-
-## Заголовок
-{:.images .three}
-
-![](themes/yandex2/images/images-three.svg)
-*Текст*
-
-![](themes/yandex2/images/images-three.svg)
-*Текст*
-
-![](themes/yandex2/images/images-three.svg)
-*Текст*
-
-### Источник
-
-## Заголовок
-
-![](themes/yandex2/images/image-right.svg)
-{:.image-right}
-
-Основной текст
-
-**Ключевая мысль**
-
-- Маркированный список
-- Маркированный список
-
-1. Нумерованный список
-2. Нумерованный список
-
-### Источник
-
-## Заголовок
-
-<!-- библиотека пиктограмм https://patterns.yandex-team.ru/presentations?typeIn=icons -->
-
-![](themes/yandex2/images/icons.svg)
-{:.icon-left}
-
-Основной текст
-
-**Ключевая мысль**
-
-- Маркированный список
-- Маркированный список
-
-1. Нумерованный список
-2. Нумерованный список
-
-### Источник
-
-## Заголовок
-{:.icons}
-
-<!-- библиотека пиктограмм https://patterns.yandex-team.ru/presentations?typeIn=icons -->
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-### Источник
-
-## Заголовок
-{:.icons .four}
-
-<!-- библиотека пиктограмм https://patterns.yandex-team.ru/presentations?typeIn=icons -->
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-### Источник
-
-## Заголовок
-{:.icons .five}
-
-<!-- библиотека пиктограмм https://patterns.yandex-team.ru/presentations?typeIn=icons -->
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-![](themes/yandex2/images/icons.svg)
-*Текст*
-
-### Источник
-
-## Заголовок будет скрыт
+## Связывание зависимостей
 {:.fullscreen}
 
-![](themes/yandex2/images/images-fullscreen.svg)
-
-## Заголовок будет скрыт
-{:.fullscreen}
-
-![](themes/yandex2/images/images-fullscreen.svg)
+![](pictures/deps.jpg)
 
 <figure markdown="1">
-Текст
+Связывание зависимостей
 </figure>
 
-## Таблица
 
-|  Locavore     |  Umami       |  Helvetica |  Vegan     |
-+---------------|--------------|------------|------------+
-|  Fingerstache<br/>The second line |  Kale        |  Chips     |  Keytar    |
-|  Sriracha     |  Gluten-free |  Ennui     |  Keffiyeh  |
-|  Thundercats  |  Jean        |  Shorts    |  Biodiesel |
-|* Terry        |* Richardson  |* Swag      |* Blog      |
-
-Текст
-
-### Источник
-
-## Исходный код (html)
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Shower</title> <!--Comment-->
-    <link rel="stylesheet" href="screen.css">
-</head>
-<body>Hello!</body>
-</html>
+## lerna bootstrap
+**packages/A/package.json**
+```
+  "dependencies": {
+    "jest": "1.0.0"
+  }
 ```
 
-## Исходный код (js)
-
-Пояснение для кода.
-
-```js
-var i, j, over, data = new Array(2, 34.12, 4.7, 0, 234, 5);
-var test = false;
-
-for (i = 1; i < data.length; i++) {
-    over = data[i]; 
-    for (j = i - 1; j >= 0 && data[j] > over; j--) {
-        data[j + 1] = data[j];
-    }
-    data[j + 1] = over;
-}
-alert(data.join(','));
+**packages/B/package.json**
+```
+  "dependencies": {
+    "A": "1.0.0",
+    "jest": "1.0.0"
+  }
 ```
 
-## Исходный код (css)
+## lerna заменяет внутренние зависимости на символические ссылки
+{:.blockquote}
 
-```css
-.head {
-    background-color: yellow;
-}
-
-.head__logo {
-    background-image: url(images/logo.svg);
-}
-
-#test, body {
-    font-weight: bold;
-}
-
+## lerna bootstrap
+```
+packages/
+  A/
+    node_modules/
+      jest/
+  B/
+    node_modules/
+      A/ -> ../../A # символическая ссылка
+      jest/
 ```
 
-## Этот заголовок будет скрыт
+## Подъём зависимостей
 {:.fullscreen}
 
-```js
-// исходный код (на весь экран)
+![](pictures/lift.jpg)
 
-var x = 10;
-for (var i = 0; i < x; i++) {
-    console.log('hello!');
+<figure markdown="1">
+Подъём зависимостей
+</figure>
+
+## Общие зависимости можно унести в корневой node_modules
+{:.blockquote}
+
+## lerna bootstrap ––hoist
+```
+node_modules/
+  A/ -> ../packages/A # символическая ссылка
+  jest/
+
+packages/
+  A/
+    node_modules/
+  B/
+    node_modules/
+```
+
+## С помощью nohoist можно оставить зависимости на уровне пакета
+{:.blockquote}
+
+## lerna bootstrap ––hoist ––nohoist=jest
+```
+node_modules/
+  A/ -> ../packages/A # символическая ссылка
+
+packages/
+  A/
+    node_modules/
+      jest/
+  B/
+    node_modules/
+      jest/
+```
+
+## При подъёме зависимостей остаётся единственный package-lock.json в корне
+{:.blockquote}
+
+## yarn workspaces
+{:.section}
+
+## yarn из коробки умеет связывать и поднимать зависимости, оставляя единственный yarn.lock в корне
+{:.blockquote}
+
+## yarn workspaces
+**package.json**
+```json
+{
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+    "nohoist": [
+      "**/jest"
+    ]
+  }
 }
 ```
 
-## Контакты 
+## yarn workspaces
+```
+node_modules/
+  A/ -> ../packages/A # символическая ссылка
+
+packages/
+  A/
+    node_modules/
+      jest/
+  B/
+    node_modules/
+      jest/
+```
+
+## yarn workspaces + lerna
+lerna умеет работать с yarn workspaces.
+
+<br/>
+
+**lerna.json**
+```json
+{
+  "npmClient": "yarn",
+  "useWorkspaces": true
+}
+```
+
+## А как же npm?
+npm обещают базовую поддержку workspaces в седьмой версии и расширенную — в восьмой:
+
+**npm v7 will have at least the Workspace feature support of Yarn, and will set the stage for more advanced workspace features in v8.**
+
+**At minimum, you’ll be able to keep multiple related packages all together in a single repository, and test changes in an integrated environment, without continually re-linking.**
+
+https://clck.ru/J5nrx
+
+## Ждём
+{:.fullscreen}
+
+![](pictures/wait.jpg)
+
+## Массовые операции
+{:.fullscreen}
+
+![](pictures/dogs.jpg)
+
+<figure markdown="1">
+Массовые операции
+</figure>
+
+## yarn и lerna позволяют выполнять операции сразу над несколькими пакетами
+{:.blockquote}
+
+## yarn workspace
+* `yarn workspace <workspace> <command> [args]`
+* `yarn workspace packages/A add jest`
+* `yarn workspace packages/A test`
+* `yarn workspace packages/A eslint .`
+
+## yarn workspaces run
+* `yarn workspaces run <command>`
+* `yarn workspaces run add jest`
+* `yarn workspaces run test`
+* `yarn workspaces run eslint .`
+
+## yarn workspace(s)
+Плюсы:
+* Запуск команд yarn
+* Запуск npm-скриптов
+* Запуск исполняемых файлов из `.bin`
+
+Минусы:
+* Невозможно запускать shell-команды
+* Невозможно указать список пакетов
+* Падает при первой же ошибке
+
+## lerna run
+* `lerna run <script> -- [args]`
+* `lerna run test`
+* `lerna run test --scope packages/A`
+* `lerna run test --scope packages/A --scope packages/B`
+* `lerna run test --parallel`
+* `lerna run test --no-bail`
+
+## lerna exec
+* `lerna exec -- <command> [args]`
+* `lerna exec -- rm -rf node_modules`
+* `lerna exec -- eslint .`
+* `lerna exec --scope packages/A -- eslint .`
+* `lerna exec --scope packages/A --scope packages/B -- eslint .`
+* `lerna exec --parallel -- eslint .`
+* `lerna exec --no-bail -- eslint .`
+
+## lerna run/exec
+Плюсы:
+* Запуск npm-скриптов
+* Запуск исполняемых файлов из `.bin`
+* Запуск произвольных команд
+* Возможность указать список пакетов
+* Возможность параллельного выполнения
+* Возможность игнорировать ошибки
+
+## Селективные операции
+{:.fullscreen}
+
+![](pictures/pit.jpg)
+
+<figure markdown="1">
+Селективные операции
+</figure>
+
+## lint-staged позволяет тестировать только изменённые файлы
+{:.blockquote}
+
+## lint-staged
+**pakage.json**
+```
+{
+  "lint-staged": {
+    "*.js": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
+```
+
+## jest умеет находить тесты только на изменившиеся файлы
+{:.blockquote}
+
+## jest ––findRelatedTests
+**pakage.json**
+```
+{
+  "lint-staged": {
+    "src/**/*.js": "jest --findRelatedTests"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
+```
+
+## lerna умеет выполнять команды только для изменившихся пакетов
+{:.blockquote}
+
+## lerna run/exec ––since
+* `lerna run --since <ref> <script> -- [args]`
+* `lerna run --since master test`
+* `lerna exec --since <ref> -- <command> [args]`
+* `lerna exec --since master -- make test`
+
+## Ссылки
+* https://lerna.js.org/
+* https://yarnpkg.com/en/docs/workspaces/
+* https://trunkbaseddevelopment.com/monorepos/
+
+## Спасибо
+{:.icons}
+
+![](pictures/mishanga.jpg)
+*Мише Трошеву*
+
+![](pictures/fresk.jpg)
+*Гоше Беседину*
+
+## Вопросы?
 {:.contacts}
 
 {% if site.author %}
@@ -314,26 +429,7 @@ for (var i = 0; i < x; i++) {
 -------
 
 <!-- left -->
-- {:.skype}author
-- {:.mail}author@yandex-team.ru
-- {:.github}author
+- {:.mail}azat@yandex-team.ru
 
 <!-- right -->
-- {:.twitter}@author
-- {:.facebook}author
-
-<!-- 
-
-- {:.mail}author@yandex-team.ru
-- {:.phone}+7-999-888-7766
-- {:.github}author
-- {:.bitbucket}author
-- {:.twitter}@author
-- {:.telegram}author
-- {:.skype}author
-- {:.instagram}author
-- {:.facebook}author
-- {:.vk}@author
-- {:.ok}@author
-
--->
+- {:.telegram}razetdinov
